@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Counter from './Counter';
 
-function App() {
+const App = () => { 
+
+  const array = [
+    {
+      appName: "Counter 1",
+      counterValue: 100
+    },
+    {
+      appName: "Counter 6",
+      counterValue: 200
+    },
+    {
+      appName: "Counter 3",
+      counterValue: 300
+    },
+    {
+      appName: "Counter 15",
+      counterValue: 500
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    { array.map((counter, i) => <Counter key={i} appName={counter.appName} counterValue={counter.counterValue}/>)
+    }
+  
+    </>
+  )
 }
 
 export default App;
